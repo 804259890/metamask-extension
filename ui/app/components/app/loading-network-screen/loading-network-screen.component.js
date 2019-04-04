@@ -1,3 +1,4 @@
+// TODO:MODIFY BY PLATON
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Spinner from '../../ui/spinner'
@@ -37,14 +38,12 @@ export default class LoadingNetworkScreen extends PureComponent {
 
     let name
 
-    if (providerName === 'mainnet') {
-      name = this.context.t('connectingToMainnet')
-    } else if (providerName === 'ropsten') {
-      name = this.context.t('connectingToRopsten')
-    } else if (providerName === 'kovan') {
-      name = this.context.t('connectingToKovan')
-    } else if (providerName === 'rinkeby') {
-      name = this.context.t('connectingToRinkeby')
+    if (providerName === 'platon_test') {
+      name = this.context.t('connectingToPlatonTest')
+    } else if (providerName === 'platon_amigo') {
+      name = this.context.t('connectingToPlatonAmigo')
+    } else if (providerName === 'platon_batala') {
+      name = this.context.t('connectingToPlatonBatala')
     } else {
       name = this.context.t('connectingTo', [providerId])
     }

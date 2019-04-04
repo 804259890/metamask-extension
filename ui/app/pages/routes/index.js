@@ -269,8 +269,7 @@ class Routes extends Component {
       name = this.context.t('connectingToPlatonAmigo')
     } else if (providerName === 'platon_batala') {
       name = this.context.t('connectingToPlatonBatala')
-    }
-    else {
+    } else {
       name = this.context.t('connectingTo', [providerId])
     }
 
@@ -289,11 +288,9 @@ class Routes extends Component {
       name = this.context.t('platon_amigo')
     } else if (providerName === 'platon_batala') {
       name = this.context.t('platon_batala')
-    }
-    else {
+    } else {
       name = this.context.t('unknownNetwork')
     }
-
     return name
   }
 }

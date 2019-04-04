@@ -1,7 +1,7 @@
 // TODO:ADD BY PLATON
-const { PLATON_TEST,PLATON_AMIGO,PLATON_BATALA } = require('./enums')
+const { PLATON_TEST, PLATON_AMIGO, PLATON_BATALA } = require('./enums')
 
-function getRPCEndpoints(network) {
+function getRPCEndpoints (network) {
 	switch (network) {
     case PLATON_TEST:
       return ['http://192.168.120.88:6789']
