@@ -1,18 +1,17 @@
+// TODO:MODIFY BY PLATON
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import {
-  MAINNET_CODE,
-  ROPSTEN_CODE,
-  RINKEYBY_CODE,
-  KOVAN_CODE,
+  PLATON_TEST_CODE,
+  PLATON_AMIGO_CODE,
+  PLATON_BATALA_CODE,
 } from '../../../../../app/scripts/controllers/network/enums'
 
 const networkToClassHash = {
-  [MAINNET_CODE]: 'mainnet',
-  [ROPSTEN_CODE]: 'ropsten',
-  [RINKEYBY_CODE]: 'rinkeby',
-  [KOVAN_CODE]: 'kovan',
+  [PLATON_TEST_CODE]: 'platon_test',
+  [PLATON_AMIGO_CODE]: 'platon_amigo',
+  [PLATON_BATALA_CODE]: 'platon_batala',
 }
 
 export default class NetworkDisplay extends Component {

@@ -1745,6 +1745,25 @@
     "message": "MetaMask will never ask for your seed phrase!"
   },
   "zeroGasPriceOnSpeedUpError": {
-    "message":"Zero gas price on speed up"
+    "message": "Zero gas price on speed up"
+  },
+
+  "platon_test": {
+    "message": "PlatOn Test Network"
+  },
+  "connectingToPlatonTest": {
+    "message": "Connecting to PlatOn Test Network"
+  },
+  "platon_amigo": {
+    "message": "PlatOn Amigo Network"
+  },
+  "connectingToPlatonAmigo": {
+    "message": "Connecting to PlatOn Amigo Network"
+  },
+  "platon_batala": {
+    "message": "PlatOn batala Network"
+  },
+  "connectingToPlatonBatala": {
+    "message": "Connecting to PlatOn Batala Network"
   }
 }

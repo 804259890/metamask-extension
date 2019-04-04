@@ -1586,5 +1586,23 @@
   },
   "zeroGasPriceOnSpeedUpError": {
     "message":"加速的 Gas 價格為 0"
+  },
+  "platon_test": {
+    "message": "PlatOn 测试网络"
+  },
+  "connectingToPlatonTest": {
+    "message": "正在连接到PlatOn测试网络"
+  },
+  "platon_amigo": {
+    "message": "PlatOn Amigo 网络"
+  },
+  "connectingToPlatonAmigo": {
+    "message": "正在连接到PlatOn Amigo网络"
+  },
+  "platon_batala": {
+    "message": "PlatOn batala 网络"
+  },
+  "connectingToPlatonBatala": {
+    "message": "正在连接到PlatOn Batala网络"
   }
 }

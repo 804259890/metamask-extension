@@ -1,3 +1,4 @@
+// TODO:MODIFY BY PLATON
 const assert = require('assert')
 const EventEmitter = require('events')
 const ObservableStore = require('obs-store')
@@ -12,27 +13,25 @@ const createJsonRpcClient = require('./createJsonRpcClient')
 const createLocalhostClient = require('./createLocalhostClient')
 const { createSwappableProxy, createEventEmitterProxy } = require('swappable-obj-proxy')
 const extend = require('extend')
+
+const rpcEndpoints = require('./rpc-endpoints')
 const networks = { networkList: {} }
 
 const {
-  ROPSTEN,
-  RINKEBY,
-  KOVAN,
-  MAINNET,
-  LOCALHOST,
+  PLATON_TEST,
+  PLATON_AMIGO,
+  PLATON_BATALA,
 } = require('./enums')
-const INFURA_PROVIDER_TYPES = [ROPSTEN, RINKEBY, KOVAN, MAINNET]
+const PLATON_PROVIDER_TYPES = [PLATON_TEST,PLATON_AMIGO,PLATON_BATALA]
 
 const env = process.env.METAMASK_ENV
 const METAMASK_DEBUG = process.env.METAMASK_DEBUG
 
 let defaultProviderConfigType
 if (process.env.IN_TEST === 'true') {
-  defaultProviderConfigType = LOCALHOST
-} else if (METAMASK_DEBUG || env === 'test') {
-  defaultProviderConfigType = RINKEBY
+  defaultProviderConfigType = PLATON_TEST
 } else {
-  defaultProviderConfigType = MAINNET
+  defaultProviderConfigType = PLATON_AMIGO
 }
 
 const defaultProviderConfig = {
@@ -117,7 +116,7 @@ module.exports = class NetworkController extends EventEmitter {
     const { type } = this.providerStore.getState()
     const ethQuery = new EthQuery(this._provider)
     const initialNetwork = this.getNetworkState()
-    ethQuery.sendAsync({ method: 'net_version' }, (err, network) => {
+    ethQuery.sendAsync({ method: 'eth_blockNumber' }, (err, network) => {
       const currentNetwork = this.getNetworkState()
       if (initialNetwork === currentNetwork) {
         if (err) {
@@ -142,7 +141,7 @@ module.exports = class NetworkController extends EventEmitter {
 
   async setProviderType (type) {
     assert.notEqual(type, 'rpc', `NetworkController - cannot call "setProviderType" with type 'rpc'. use "setRpcTarget"`)
-    assert(INFURA_PROVIDER_TYPES.includes(type) || type === LOCALHOST, `NetworkController - Unknown rpc type "${type}"`)
+    assert(PLATON_PROVIDER_TYPES.includes(type), `NetworkController - Unknown rpc type "${type}"`)
     const providerConfig = { type }
     this.providerConfig = providerConfig
   }
@@ -173,13 +172,10 @@ module.exports = class NetworkController extends EventEmitter {
   _configureProvider (opts) {
     const { type, rpcTarget, chainId, ticker, nickname } = opts
     // infura type-based endpoints
-    const isInfura = INFURA_PROVIDER_TYPES.includes(type)
-    if (isInfura) {
-      this._configureInfuraProvider(opts)
+    const isPlaton = PLATON_PROVIDER_TYPES.includes(type)
+    if (isPlaton) {
+      this._configureStandardProvider({ rpcUrl: rpcEndpoints.getRPCEndpoints(type)[0]})
     // other type-based rpc endpoints
-    } else if (type === LOCALHOST) {
-      this._configureLocalhostProvider()
-    // url-based rpc endpoints
     } else if (type === 'rpc') {
       this._configureStandardProvider({ rpcUrl: rpcTarget, chainId, ticker, nickname })
     } else {

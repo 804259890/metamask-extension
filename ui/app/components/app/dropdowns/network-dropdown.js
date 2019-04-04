@@ -1,3 +1,4 @@
+// TODO:MODIFY BY PLATON
 const Component = require('react').Component
 const PropTypes = require('prop-types')
 const h = require('react-hyperscript')
@@ -119,137 +120,68 @@ NetworkDropdown.prototype.render = function () {
     h(
       DropdownMenuItem,
       {
-        key: 'main',
+        key: 'platon_test',
         closeMenu: () => this.props.hideNetworkDropdown(),
-        onClick: () => this.handleClick('mainnet'),
-        style: { ...dropdownMenuItemStyle, borderColor: '#038789' },
-      },
-      [
-        providerType === 'mainnet' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
-        h(NetworkDropdownIcon, {
-          backgroundColor: '#29B6AF', // $java
-          isSelected: providerType === 'mainnet',
-        }),
-        h('span.network-name-item', {
-          style: {
-            color: providerType === 'mainnet' ? '#ffffff' : '#9b9b9b',
-          },
-        }, this.context.t('mainnet')),
-      ]
-    ),
-
-    h(
-      DropdownMenuItem,
-      {
-        key: 'ropsten',
-        closeMenu: () => this.props.hideNetworkDropdown(),
-        onClick: () => this.handleClick('ropsten'),
+        onClick: () => this.handleClick('platon_test'),
         style: dropdownMenuItemStyle,
       },
       [
-        providerType === 'ropsten' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
-        h(NetworkDropdownIcon, {
-          backgroundColor: '#ff4a8d', // $wild-strawberry
-          isSelected: providerType === 'ropsten',
-        }),
-        h('span.network-name-item', {
-          style: {
-            color: providerType === 'ropsten' ? '#ffffff' : '#9b9b9b',
-          },
-        }, this.context.t('ropsten')),
-      ]
-    ),
-
-    h(
-      DropdownMenuItem,
-      {
-        key: 'kovan',
-        closeMenu: () => this.props.hideNetworkDropdown(),
-        onClick: () => this.handleClick('kovan'),
-        style: dropdownMenuItemStyle,
-      },
-      [
-        providerType === 'kovan' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
-        h(NetworkDropdownIcon, {
-          backgroundColor: '#7057ff', // $cornflower-blue
-          isSelected: providerType === 'kovan',
-        }),
-        h('span.network-name-item', {
-          style: {
-            color: providerType === 'kovan' ? '#ffffff' : '#9b9b9b',
-          },
-        }, this.context.t('kovan')),
-      ]
-    ),
-
-    h(
-      DropdownMenuItem,
-      {
-        key: 'rinkeby',
-        closeMenu: () => this.props.hideNetworkDropdown(),
-        onClick: () => this.handleClick('rinkeby'),
-        style: dropdownMenuItemStyle,
-      },
-      [
-        providerType === 'rinkeby' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
+        providerType === 'platon_test' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
         h(NetworkDropdownIcon, {
           backgroundColor: '#f6c343', // $saffron
-          isSelected: providerType === 'rinkeby',
+          isSelected: providerType === 'platon_test',
         }),
         h('span.network-name-item', {
           style: {
-            color: providerType === 'rinkeby' ? '#ffffff' : '#9b9b9b',
+            color: providerType === 'platon_test' ? '#ffffff' : '#9b9b9b',
           },
-        }, this.context.t('rinkeby')),
+        }, this.context.t('platon_test')),
       ]
     ),
 
     h(
       DropdownMenuItem,
       {
-        key: 'default',
+        key: 'platon_amigo',
         closeMenu: () => this.props.hideNetworkDropdown(),
-        onClick: () => this.handleClick('localhost'),
+        onClick: () => this.handleClick('platon_amigo'),
         style: dropdownMenuItemStyle,
       },
       [
-        providerType === 'localhost' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
+        providerType === 'platon_amigo' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
         h(NetworkDropdownIcon, {
-          isSelected: providerType === 'localhost',
-          innerBorder: '1px solid #9b9b9b',
+          backgroundColor: '#f6c343', // $saffron
+          isSelected: providerType === 'platon_amigo',
         }),
         h('span.network-name-item', {
           style: {
-            color: providerType === 'localhost' ? '#ffffff' : '#9b9b9b',
+            color: providerType === 'platon_amigo' ? '#ffffff' : '#9b9b9b',
           },
-        }, this.context.t('localhost')),
+        }, this.context.t('platon_amigo')),
       ]
     ),
-
-    this.renderCustomOption(props.provider),
-    this.renderCommonRpc(rpcListDetail, props.provider),
 
     h(
       DropdownMenuItem,
       {
+        key: 'platon_batala',
         closeMenu: () => this.props.hideNetworkDropdown(),
-        onClick: () => this.props.history.push(ADVANCED_ROUTE),
+        onClick: () => this.handleClick('platon_batala'),
         style: dropdownMenuItemStyle,
       },
       [
-        activeNetwork === 'custom' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
+        providerType === 'platon_batala' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
         h(NetworkDropdownIcon, {
-          isSelected: activeNetwork === 'custom',
-          innerBorder: '1px solid #9b9b9b',
+          backgroundColor: '#7057ff', // $cornflower-blue
+          isSelected: providerType === 'platon_batala',
         }),
         h('span.network-name-item', {
           style: {
-            color: activeNetwork === 'custom' ? '#ffffff' : '#9b9b9b',
+            color: providerType === 'platon_batala' ? '#ffffff' : '#9b9b9b',
           },
-        }, this.context.t('customRPC')),
+        }, this.context.t('platon_batala')),
       ]
     ),
-
   ])
 }
 
@@ -277,15 +209,14 @@ NetworkDropdown.prototype.getNetworkName = function () {
 
   let name
 
-  if (providerName === 'mainnet') {
-    name = this.context.t('mainnet')
-  } else if (providerName === 'ropsten') {
-    name = this.context.t('ropsten')
-  } else if (providerName === 'kovan') {
-    name = this.context.t('kovan')
-  } else if (providerName === 'rinkeby') {
-    name = this.context.t('rinkeby')
-  } else {
+  if (providerName === 'platon_batala') {
+    name = this.context.t('platon_batala')
+  } else if (providerName === 'platon_amigo') {
+    name = this.context.t('platon_amigo')
+  } else if (providerName === 'platon_test') {
+    name = this.context.t('platon_test')
+  }
+  else {
     name = provider.nickname || this.context.t('unknownNetwork')
   }
 

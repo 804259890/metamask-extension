@@ -1,3 +1,4 @@
+// TODO:MODIFY BY PLATON
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
@@ -262,15 +263,14 @@ class Routes extends Component {
 
     let name
 
-    if (providerName === 'mainnet') {
-      name = this.context.t('connectingToMainnet')
-    } else if (providerName === 'ropsten') {
-      name = this.context.t('connectingToRopsten')
-    } else if (providerName === 'kovan') {
-      name = this.context.t('connectingToKovan')
-    } else if (providerName === 'rinkeby') {
-      name = this.context.t('connectingToRinkeby')
-    } else {
+    if (providerName === 'platon_test') {
+      name = this.context.t('connectingToPlatonTest')
+    } else if (providerName === 'platon_amigo') {
+      name = this.context.t('connectingToPlatonAmigo')
+    } else if (providerName === 'platon_batala') {
+      name = this.context.t('connectingToPlatonBatala')
+    }
+    else {
       name = this.context.t('connectingTo', [providerId])
     }
 
@@ -283,15 +283,14 @@ class Routes extends Component {
 
     let name
 
-    if (providerName === 'mainnet') {
-      name = this.context.t('mainnet')
-    } else if (providerName === 'ropsten') {
-      name = this.context.t('ropsten')
-    } else if (providerName === 'kovan') {
-      name = this.context.t('kovan')
-    } else if (providerName === 'rinkeby') {
-      name = this.context.t('rinkeby')
-    } else {
+    if (providerName === 'platon_test') {
+      name = this.context.t('platon_test')
+    } else if (providerName === 'platon_amigo') {
+      name = this.context.t('platon_amigo')
+    } else if (providerName === 'platon_batala') {
+      name = this.context.t('platon_batala')
+    }
+    else {
       name = this.context.t('unknownNetwork')
     }
 

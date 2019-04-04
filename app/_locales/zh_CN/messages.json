@@ -250,7 +250,7 @@
     "message": "精确小数点"
   },
   "defaultNetwork": {
-    "message": "默认以太坊交易网络为主网。"
+    "message": "默认PlatOn测试网络为主网。"
   },
   "denExplainer": {
     "message": "你的 DEN 是存储在 MetaMask 中的已加密密码。"
@@ -1001,5 +1001,23 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "你的私有助记词"
+  },
+  "platon_test": {
+    "message": "PlatOn 测试网络"
+  },
+  "connectingToPlatonTest": {
+    "message": "正在连接到PlatOn测试网络"
+  },
+  "platon_amigo": {
+    "message": "PlatOn Amigo 网络"
+  },
+  "connectingToPlatonAmigo": {
+    "message": "正在连接到PlatOn Amigo网络"
+  },
+  "platon_batala": {
+    "message": "PlatOn batala 网络"
+  },
+  "connectingToPlatonBatala": {
+    "message": "正在连接到PlatOn Batala网络"
   }
 }

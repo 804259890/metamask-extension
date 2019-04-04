@@ -1,3 +1,4 @@
+// TODO:MODIFY BY PLATON
 export const ETH = 'ETH'
 export const GWEI = 'GWEI'
 export const WEI = 'WEI'
@@ -6,8 +7,7 @@ export const PRIMARY = 'PRIMARY'
 export const SECONDARY = 'SECONDARY'
 
 export const NETWORK_TYPES = {
-  KOVAN: 'kovan',
-  MAINNET: 'mainnet',
-  RINKEBY: 'rinkeby',
-  ROPSTEN: 'ropsten',
+  PLATON_TEST: 'platon_test',
+  PLATON_AMIGO: 'platon_AMIGO',
+  PLATON_BATALA: 'platon_BATALA',
 }

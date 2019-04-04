@@ -1,3 +1,4 @@
+// TODO:MODIFY BY PLATON
 const EventEmitter = require('safe-event-emitter')
 const ObservableStore = require('obs-store')
 const ethUtil = require('ethereumjs-util')
@@ -109,7 +110,9 @@ class TransactionController extends EventEmitter {
   /** @returns {number} the chainId*/
   getChainId () {
     const networkState = this.networkStore.getState()
+
     const getChainId = parseInt(networkState)
+
     if (Number.isNaN(getChainId)) {
       return 0
     } else {
@@ -385,7 +388,7 @@ class TransactionController extends EventEmitter {
     const txMeta = this.txStateManager.getTx(txId)
     // add network/chain id
     const chainId = this.getChainId()
-    const txParams = Object.assign({}, txMeta.txParams, { chainId })
+    const txParams = Object.assign({}, txMeta.txParams, { /*chainId*/ })
     // sign tx
     const fromAddress = txParams.from
     const ethTx = new Transaction(txParams)
