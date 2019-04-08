@@ -1,4 +1,4 @@
-// TODO:MODIFY BY PLATON
+// TODO:MODIFIED BY PLATON
 const EventEmitter = require('safe-event-emitter')
 const ObservableStore = require('obs-store')
 const ethUtil = require('ethereumjs-util')

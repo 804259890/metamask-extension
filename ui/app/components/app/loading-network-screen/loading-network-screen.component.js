@@ -1,4 +1,4 @@
-// TODO:MODIFY BY PLATON
+// TODO:MODIFIED BY PLATON
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Spinner from '../../ui/spinner'

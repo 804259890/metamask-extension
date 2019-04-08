@@ -1,4 +1,4 @@
-// TODO:ADD BY PLATON
+// TODO:ADDED BY PLATON
 const { PLATON_TEST, PLATON_AMIGO, PLATON_BATALA } = require('./enums')
 
 function getRPCEndpoints (network) {

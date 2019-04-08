@@ -1,4 +1,4 @@
-// TODO:MODIFY BY PLATON
+// TODO:MODIFIED BY PLATON
 const assert = require('assert')
 const EventEmitter = require('events')
 const ObservableStore = require('obs-store')

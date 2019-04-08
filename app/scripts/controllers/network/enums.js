@@ -1,4 +1,4 @@
-// TODO:MODIFY BY PLATON
+// TODO:MODIFIED BY PLATON
 const PLATON_TEST = 'platon_test'
 const PLATON_AMIGO = 'platon_amigo'
 const PLATON_BATALA = 'platon_batala'

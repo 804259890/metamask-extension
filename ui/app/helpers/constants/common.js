@@ -1,4 +1,4 @@
-// TODO:MODIFY BY PLATON
+// TODO:MODIFIED BY PLATON
 export const ETH = 'ETH'
 export const GWEI = 'GWEI'
 export const WEI = 'WEI'

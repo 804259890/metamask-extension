@@ -1,4 +1,4 @@
-// TODO:MODIFY BY PLATON
+// TODO:MODIFIED BY PLATON
 const Component = require('react').Component
 const PropTypes = require('prop-types')
 const h = require('react-hyperscript')
